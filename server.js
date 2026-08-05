@@ -3,6 +3,11 @@ const port = 5000;
 
 const app = express();
 
+// Body parse middleware
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
 const ideasRouter = require("./routes/ideas");
 
 app.use("/api/ideas", ideasRouter);
